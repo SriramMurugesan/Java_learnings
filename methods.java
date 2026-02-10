@@ -7,10 +7,13 @@ class Example1 {
     void hello() {
         System.out.println("Hello");
     }
+    void add(int a, int b) {
+        System.out.println(a + b);
+    }
     
     public static void main(String[] args) {
         Example1 obj = new Example1();
-        obj.hello();  // Output: Hello
+        obj.add(10,20);  // Output: Hello
     }
 }
 
