@@ -2,7 +2,6 @@
 -- SESSION 4: AGGREGATE FUNCTIONS + GROUP BY
 -- ========================================
 -- Goal: Learn to summarize and analyze data
--- Time: 1 hour
 
 USE college;
 

@@ -7,7 +7,7 @@ By the end of this day, students will understand how to store, retrieve, combine
 
 ## 📚 Session Structure
 
-### ☀️ **Session 1** (First 1.5 hours) - Basics + Setup
+### ☀️ Basics + Setup
 **Goal:** Students understand data storage
 
 **Topics:**
@@ -24,7 +24,7 @@ By the end of this day, students will understand how to store, retrieve, combine
 
 ---
 
-### ☀️ **Session 2** (Next 1 hour) - SELECT + Filtering
+### ☀️ SELECT + Filtering
 **Goal:** Build confidence with basic queries
 
 **Topics:**
@@ -38,7 +38,7 @@ By the end of this day, students will understand how to store, retrieve, combine
 
 ---
 
-### 🍽️ **Session 3** (Before Lunch) - Joins (MOST IMPORTANT)
+### 🍽️ Joins (MOST IMPORTANT)
 **Goal:** Understand how to combine data from multiple tables
 
 **Story:** "Data is split into different tables. JOIN combines them."
@@ -55,7 +55,7 @@ By the end of this day, students will understand how to store, retrieve, combine
 
 ---
 
-### 🌤️ **Session 4** (After Lunch) - Aggregate Functions + GROUP BY
+### 🌤️ Aggregate Functions + GROUP BY
 **Goal:** Learn to summarize and analyze data
 
 **Topics:**
@@ -68,7 +68,7 @@ By the end of this day, students will understand how to store, retrieve, combine
 
 ---
 
-### 🌇 **Session 5** (Advanced but Simple) - Subqueries
+### 🌇 Subqueries
 **Goal:** Demystify subqueries
 
 **Explanation:** "Query inside another query."
@@ -83,7 +83,7 @@ By the end of this day, students will understand how to store, retrieve, combine
 
 ---
 
-### 🌆 **Session 6** (Modern SQL) - Common Table Expressions (CTE)
+### 🌆 Common Table Expressions (CTE)
 **Goal:** Simplify complex queries
 
 **Explanation:** "CTE is just a temporary named result."
@@ -98,7 +98,7 @@ By the end of this day, students will understand how to store, retrieve, combine
 
 ---
 
-### 🌙 **Session 7** (Final 1 hour) - Mini Project Tasks
+### 🌙 Mini Project Tasks
 **Goal:** Make students feel like experts
 
 **Practice Problems:**

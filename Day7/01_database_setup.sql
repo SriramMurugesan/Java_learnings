@@ -2,7 +2,6 @@
 -- SESSION 1: DATABASE SETUP
 -- ========================================
 -- Goal: Create a database to store college information
--- Time: 5 minutes
 
 -- Step 1: Create a new database called 'college'
 CREATE DATABASE college;

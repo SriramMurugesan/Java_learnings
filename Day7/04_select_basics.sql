@@ -2,7 +2,6 @@
 -- SESSION 2: SELECT + FILTERING
 -- ========================================
 -- Goal: Build confidence with basic queries
--- Time: 1 hour
 
 USE college;
 

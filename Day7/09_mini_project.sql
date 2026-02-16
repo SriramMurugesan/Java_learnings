@@ -2,7 +2,6 @@
 -- SESSION 7: MINI PROJECT TASKS
 -- ========================================
 -- Goal: Make students feel like experts!
--- Time: 1 hour
 
 USE college;
 

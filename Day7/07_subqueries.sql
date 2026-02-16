@@ -2,7 +2,6 @@
 -- SESSION 5: SUBQUERIES
 -- ========================================
 -- Goal: Demystify subqueries
--- Time: 45 minutes
 
 USE college;
 

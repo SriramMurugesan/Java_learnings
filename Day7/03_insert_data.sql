@@ -2,7 +2,6 @@
 -- SESSION 1: INSERT DATA
 -- ========================================
 -- Goal: Add realistic data to practice with
--- Time: 20 minutes
 
 USE college;
 

@@ -2,7 +2,6 @@
 -- SESSION 6: COMMON TABLE EXPRESSIONS (CTE)
 -- ========================================
 -- Goal: Simplify complex queries
--- Time: 45 minutes
 
 USE college;
 

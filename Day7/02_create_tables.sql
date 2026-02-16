@@ -2,7 +2,6 @@
 -- SESSION 1: CREATE TABLES
 -- ========================================
 -- Goal: Create tables to organize data
--- Time: 15 minutes
 
 -- Make sure you're using the college database
 USE college;

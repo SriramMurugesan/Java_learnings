@@ -2,7 +2,6 @@
 -- SESSION 3: JOINS (MOST IMPORTANT!)
 -- ========================================
 -- Goal: Understand how to combine data from multiple tables
--- Time: 1 hour
 
 USE college;
 
