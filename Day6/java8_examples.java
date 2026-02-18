@@ -17,8 +17,8 @@ public class java8_examples {
         
         // Example 2: Lambda with Parameters
         System.out.println("\nExample 2: Lambda with Parameters");
-        Calculator add = (a, b) -> a + b;
-        Calculator multiply = (a, b) -> a * b;
+        Java8Calculator add = (a, b) -> a + b;
+        Java8Calculator multiply = (a, b) -> a * b;
         System.out.println("5 + 3 = " + add.calculate(5, 3));
         System.out.println("5 * 3 = " + multiply.calculate(5, 3));
         
@@ -107,6 +107,6 @@ public class java8_examples {
 }
 
 @FunctionalInterface
-interface Calculator {
+interface Java8Calculator {
     int calculate(int a, int b);
 }

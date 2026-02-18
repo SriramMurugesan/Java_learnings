@@ -73,16 +73,16 @@ class Program3_FinallyBlock {
 }
 
 // Program 4: Custom Exception
-class InvalidAgeException extends Exception {
-    public InvalidAgeException(String message) {
+class Day5InterviewInvalidAgeException extends Exception {
+    public Day5InterviewInvalidAgeException(String message) {
         super(message);
     }
 }
 
 class Program4_CustomException {
-    public static void validateAge(int age) throws InvalidAgeException {
+    public static void validateAge(int age) throws Day5InterviewInvalidAgeException {
         if (age < 0 || age > 150) {
-            throw new InvalidAgeException("Age must be between 0 and 150. Got: " + age);
+            throw new Day5InterviewInvalidAgeException("Age must be between 0 and 150. Got: " + age);
         }
         System.out.println("Valid age: " + age);
     }
@@ -92,7 +92,7 @@ class Program4_CustomException {
         try {
             validateAge(25);
             validateAge(200);
-        } catch (InvalidAgeException e) {
+        } catch (Day5InterviewInvalidAgeException e) {
             System.out.println("Error: " + e.getMessage());
         }
         System.out.println();
@@ -185,8 +185,8 @@ class Program7_TryWithResources {
 }
 
 // Program 8: Bank Account with Custom Exceptions
-class InsufficientFundsException extends Exception {
-    public InsufficientFundsException(double balance, double amount) {
+class Day5InterviewInsufficientFundsException extends Exception {
+    public Day5InterviewInsufficientFundsException(double balance, double amount) {
         super("Insufficient funds. Balance: $" + balance + ", Requested: $" + amount);
     }
 }
@@ -197,10 +197,10 @@ class InvalidAmountException extends Exception {
     }
 }
 
-class BankAccount {
+class Day5InterviewBankAccount {
     private double balance;
     
-    public BankAccount(double initialBalance) {
+    public Day5InterviewBankAccount(double initialBalance) {
         this.balance = initialBalance;
     }
     
@@ -212,12 +212,12 @@ class BankAccount {
         System.out.println("Deposited: $" + amount + ", New balance: $" + balance);
     }
     
-    public void withdraw(double amount) throws InvalidAmountException, InsufficientFundsException {
+    public void withdraw(double amount) throws InvalidAmountException, Day5InterviewInsufficientFundsException {
         if (amount <= 0) {
             throw new InvalidAmountException("Withdrawal amount must be positive");
         }
         if (amount > balance) {
-            throw new InsufficientFundsException(balance, amount);
+            throw new Day5InterviewInsufficientFundsException(balance, amount);
         }
         balance -= amount;
         System.out.println("Withdrawn: $" + amount + ", New balance: $" + balance);
@@ -232,7 +232,7 @@ class Program8_BankAccount {
     public static void demonstrate() {
         System.out.println("=== Program 8: Bank Account with Custom Exceptions ===");
         
-        BankAccount account = new BankAccount(1000);
+        Day5InterviewBankAccount account = new Day5InterviewBankAccount(1000);
         
         try {
             account.deposit(500);
@@ -240,7 +240,7 @@ class Program8_BankAccount {
             account.withdraw(2000);
         } catch (InvalidAmountException e) {
             System.out.println("Invalid amount: " + e.getMessage());
-        } catch (InsufficientFundsException e) {
+        } catch (Day5InterviewInsufficientFundsException e) {
             System.out.println("Transaction failed: " + e.getMessage());
         }
         
@@ -392,8 +392,8 @@ class Program13_StringParsing {
     }
 }
 
-// Program 14: Calculator with Exception Handling
-class Calculator {
+// Program 14: Day5InterviewCalculator with Exception Handling
+class Day5InterviewCalculator {
     public static int divide(int a, int b) throws ArithmeticException {
         if (b == 0) {
             throw new ArithmeticException("Cannot divide by zero");
@@ -411,18 +411,18 @@ class Calculator {
 
 class Program14_Calculator {
     public static void demonstrate() {
-        System.out.println("=== Program 14: Calculator with Exception Handling ===");
+        System.out.println("=== Program 14: Day5InterviewCalculator with Exception Handling ===");
         
         try {
-            System.out.println("10 / 2 = " + Calculator.divide(10, 2));
-            System.out.println("10 / 0 = " + Calculator.divide(10, 0));
+            System.out.println("10 / 2 = " + Day5InterviewCalculator.divide(10, 2));
+            System.out.println("10 / 0 = " + Day5InterviewCalculator.divide(10, 0));
         } catch (ArithmeticException e) {
             System.out.println("Error: " + e.getMessage());
         }
         
         try {
-            System.out.println("√16 = " + Calculator.squareRoot(16));
-            System.out.println("√-4 = " + Calculator.squareRoot(-4));
+            System.out.println("√16 = " + Day5InterviewCalculator.squareRoot(16));
+            System.out.println("√-4 = " + Day5InterviewCalculator.squareRoot(-4));
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }

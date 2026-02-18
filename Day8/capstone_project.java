@@ -1,16 +1,16 @@
-// Capstone Project: Student Management System
+// Capstone Project: CapstoneStudent Management System
 // Uses multiple collection types to demonstrate their usage
 
 import java.util.*;
 
-// Student class
-class Student implements Comparable<Student> {
+// CapstoneStudent class
+class CapstoneStudent implements Comparable<CapstoneStudent> {
     private int id;
     private String name;
     private double gpa;
     private String department;
 
-    public Student(int id, String name, double gpa, String department) {
+    public CapstoneStudent(int id, String name, double gpa, String department) {
         this.id = id;
         this.name = name;
         this.gpa = gpa;
@@ -34,7 +34,7 @@ class Student implements Comparable<Student> {
     }
 
     // For TreeSet sorting by GPA
-    public int compareTo(Student other) {
+    public int compareTo(CapstoneStudent other) {
         return Double.compare(other.gpa, this.gpa); // Descending order
     }
 
@@ -67,7 +67,7 @@ class Course implements Comparable<Course> {
 public class capstone_project {
 
     // ArrayList: Store all students
-    private static ArrayList<Student> allStudents = new ArrayList<>();
+    private static ArrayList<CapstoneStudent> allStudents = new ArrayList<>();
 
     // LinkedList: Waitlist for courses
     private static LinkedList<String> waitlist = new LinkedList<>();
@@ -76,7 +76,7 @@ public class capstone_project {
     private static HashSet<Integer> studentIds = new HashSet<>();
 
     // TreeSet: Students sorted by GPA
-    private static TreeSet<Student> topStudents = new TreeSet<>();
+    private static TreeSet<CapstoneStudent> topStudents = new TreeSet<>();
 
     // LinkedHashSet: Enrollment order
     private static LinkedHashSet<String> enrollmentOrder = new LinkedHashSet<>();
@@ -134,19 +134,19 @@ public class capstone_project {
 
     private static void addStudent(int id, String name, double gpa, String dept) {
         if (studentIds.add(id)) { // Check for duplicate ID
-            Student student = new Student(id, name, gpa, dept);
+            CapstoneStudent student = new CapstoneStudent(id, name, gpa, dept);
             allStudents.add(student);
             topStudents.add(student);
             recentActivities.addFirst("Added student: " + name);
         } else {
-            System.out.println("Student ID " + id + " already exists!");
+            System.out.println("CapstoneStudent ID " + id + " already exists!");
         }
     }
 
     private static void demonstrateArrayList() {
         System.out.println("1. ARRAYLIST - All Students");
         System.out.println("Total students: " + allStudents.size());
-        for (Student s : allStudents) {
+        for (CapstoneStudent s : allStudents) {
             System.out.println("   " + s);
         }
         System.out.println();
@@ -165,7 +165,7 @@ public class capstone_project {
     }
 
     private static void demonstrateHashSet() {
-        System.out.println("3. HASHSET - Unique Student IDs");
+        System.out.println("3. HASHSET - Unique CapstoneStudent IDs");
         System.out.println("Registered IDs: " + studentIds);
         System.out.println("Total unique IDs: " + studentIds.size());
         System.out.println();
@@ -175,7 +175,7 @@ public class capstone_project {
         System.out.println("4. TREESET - Top Students by GPA");
         System.out.println("Students ranked by GPA:");
         int rank = 1;
-        for (Student s : topStudents) {
+        for (CapstoneStudent s : topStudents) {
             System.out.println("   Rank " + rank++ + ": " + s);
         }
         System.out.println();

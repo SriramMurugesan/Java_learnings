@@ -1,49 +1,49 @@
 // ==================== INTERFACE EXAMPLES ====================
 
 // Example 1: Basic Interface
-interface Animal {
+interface InterfaceAnimal {
     void sound();
 
     void eat();
 }
 
-class Dog implements Animal {
+class InterfaceDog implements InterfaceAnimal {
     @Override
     public void sound() {
-        System.out.println("Dog barks");
+        System.out.println("InterfaceDog barks");
     }
 
     @Override
     public void eat() {
-        System.out.println("Dog eats bones");
+        System.out.println("InterfaceDog eats bones");
     }
 }
 
-class Cat implements Animal {
+class InterfaceCat implements InterfaceAnimal {
     @Override
     public void sound() {
-        System.out.println("Cat meows");
+        System.out.println("InterfaceCat meows");
     }
 
     @Override
     public void eat() {
-        System.out.println("Cat eats fish");
+        System.out.println("InterfaceCat eats fish");
     }
 }
 
 // Example 2: Multiple Interface Implementation
-interface Printable {
+interface InterfacePrintable {
     void print();
 }
 
-interface Showable {
+interface InterfaceShowable {
     void show();
 }
 
-class Document implements Printable, Showable {
+class InterfaceDocument implements InterfacePrintable, InterfaceShowable {
     String content;
 
-    Document(String content) {
+    InterfaceDocument(String content) {
         this.content = content;
     }
 
@@ -59,13 +59,13 @@ class Document implements Printable, Showable {
 }
 
 // Example 3: Interface with Constants
-interface MathConstants {
+interface InterfaceMathConstants {
     double PI = 3.14159;
     double E = 2.71828;
     int MAX_VALUE = 100;
 }
 
-class Calculator implements MathConstants {
+class InterfaceCalculator implements InterfaceMathConstants {
     double calculateCircleArea(double radius) {
         return PI * radius * radius;
     }
@@ -78,25 +78,25 @@ class Calculator implements MathConstants {
 }
 
 // Example 4: Interface Extending Another Interface
-interface Vehicle {
+interface InterfaceVehicle {
     void start();
 
     void stop();
 }
 
-interface FourWheeler extends Vehicle {
+interface InterfaceFourWheeler extends InterfaceVehicle {
     void openDoor();
 }
 
-class Car implements FourWheeler {
+class InterfaceCar implements InterfaceFourWheeler {
     @Override
     public void start() {
-        System.out.println("Car is starting");
+        System.out.println("InterfaceCar is starting");
     }
 
     @Override
     public void stop() {
-        System.out.println("Car is stopping");
+        System.out.println("InterfaceCar is stopping");
     }
 
     @Override
@@ -106,7 +106,7 @@ class Car implements FourWheeler {
 }
 
 // Example 5: Default Methods (Java 8+)
-interface Payment {
+interface InterfacePayment {
     void processPayment(double amount);
 
     // Default method
@@ -119,7 +119,7 @@ interface Payment {
     }
 }
 
-class CreditCardPayment implements Payment {
+class InterfaceCreditCardPayment implements InterfacePayment {
     @Override
     public void processPayment(double amount) {
         System.out.println("Processing credit card payment: $" + amount);
@@ -132,7 +132,7 @@ class CreditCardPayment implements Payment {
     }
 }
 
-class UPIPayment implements Payment {
+class InterfaceUPIPayment implements InterfacePayment {
     @Override
     public void processPayment(double amount) {
         System.out.println("Processing UPI payment: ₹" + amount);
@@ -142,7 +142,7 @@ class UPIPayment implements Payment {
 }
 
 // Example 6: Static Methods in Interface (Java 8+)
-interface MathOperations {
+interface InterfaceMathOperations {
     // Static method
     static int add(int a, int b) {
         return a + b;
@@ -156,7 +156,7 @@ interface MathOperations {
     int calculate(int a, int b);
 }
 
-class Addition implements MathOperations {
+class InterfaceAddition implements InterfaceMathOperations {
     @Override
     public int calculate(int a, int b) {
         return a + b;
@@ -165,19 +165,19 @@ class Addition implements MathOperations {
 
 // Example 7: Functional Interface (Java 8+)
 @FunctionalInterface
-interface Calculable {
+interface InterfaceCalculable {
     int calculate(int a, int b);
 }
 
 class FunctionalInterfaceDemo {
-    static void performOperation(int a, int b, Calculable operation) {
+    static void performOperation(int a, int b, InterfaceCalculable operation) {
         int result = operation.calculate(a, b);
         System.out.println("Result: " + result);
     }
 }
 
-// Example 8: Real-World Example - Shape Interface
-interface Shape {
+// Example 8: Real-World Example - InterfaceShape Interface
+interface InterfaceShape {
     double area();
 
     double perimeter();
@@ -188,10 +188,10 @@ interface Shape {
     }
 }
 
-class Circle implements Shape {
+class InterfaceCircle implements InterfaceShape {
     double radius;
 
-    Circle(double radius) {
+    InterfaceCircle(double radius) {
         this.radius = radius;
     }
 
@@ -206,11 +206,11 @@ class Circle implements Shape {
     }
 }
 
-class Rectangle implements Shape {
+class InterfaceRectangle implements InterfaceShape {
     double length;
     double width;
 
-    Rectangle(double length, double width) {
+    InterfaceRectangle(double length, double width) {
         this.length = length;
         this.width = width;
     }
@@ -227,37 +227,37 @@ class Rectangle implements Shape {
 }
 
 // Example 9: Multiple Inheritance via Interfaces
-interface Flyable {
+interface InterfaceFlyable {
     void fly();
 }
 
-interface Swimmable {
+interface InterfaceSwimmable {
     void swim();
 }
 
-interface Walkable {
+interface InterfaceWalkable {
     void walk();
 }
 
-class Duck implements Flyable, Swimmable, Walkable {
+class InterfaceDuck implements InterfaceFlyable, InterfaceSwimmable, InterfaceWalkable {
     @Override
     public void fly() {
-        System.out.println("Duck is flying");
+        System.out.println("InterfaceDuck is flying");
     }
 
     @Override
     public void swim() {
-        System.out.println("Duck is swimming");
+        System.out.println("InterfaceDuck is swimming");
     }
 
     @Override
     public void walk() {
-        System.out.println("Duck is walking");
+        System.out.println("InterfaceDuck is walking");
     }
 }
 
 // Example 10: Real-World Example - Database Operations
-interface DatabaseOperations {
+interface InterfaceDatabaseOperations {
     void connect();
 
     void disconnect();
@@ -269,7 +269,7 @@ interface DatabaseOperations {
     }
 }
 
-class MySQLDatabase implements DatabaseOperations {
+class InterfaceMySQLDatabase implements InterfaceDatabaseOperations {
     @Override
     public void connect() {
         System.out.println("Connecting to MySQL database");
@@ -287,7 +287,7 @@ class MySQLDatabase implements DatabaseOperations {
     }
 }
 
-class MongoDBDatabase implements DatabaseOperations {
+class InterfaceMongoDBDatabase implements InterfaceDatabaseOperations {
     @Override
     public void connect() {
         System.out.println("Connecting to MongoDB database");
@@ -306,7 +306,7 @@ class MongoDBDatabase implements DatabaseOperations {
 }
 
 // Example 11: Interface with Nested Interface
-interface OuterInterface {
+interface InterfaceOuterInterface {
     void outerMethod();
 
     interface InnerInterface {
@@ -314,14 +314,14 @@ interface OuterInterface {
     }
 }
 
-class ImplementOuter implements OuterInterface {
+class ImplementOuter implements InterfaceOuterInterface {
     @Override
     public void outerMethod() {
         System.out.println("Outer method implementation");
     }
 }
 
-class ImplementInner implements OuterInterface.InnerInterface {
+class ImplementInner implements InterfaceOuterInterface.InnerInterface {
     @Override
     public void innerMethod() {
         System.out.println("Inner method implementation");
@@ -329,15 +329,15 @@ class ImplementInner implements OuterInterface.InnerInterface {
 }
 
 // Example 12: Marker Interface (Empty Interface)
-interface Serializable {
+interface InterfaceSerializable {
     // Empty interface - just a marker
 }
 
-class Student implements Serializable {
+class InterfaceStudent implements InterfaceSerializable {
     String name;
     int rollNumber;
 
-    Student(String name, int rollNumber) {
+    InterfaceStudent(String name, int rollNumber) {
         this.name = name;
         this.rollNumber = rollNumber;
     }
@@ -345,7 +345,7 @@ class Student implements Serializable {
     void displayInfo() {
         System.out.println("Name: " + name);
         System.out.println("Roll Number: " + rollNumber);
-        if (this instanceof Serializable) {
+        if (this instanceof InterfaceSerializable) {
             System.out.println("This object is serializable");
         }
     }
@@ -355,32 +355,32 @@ class Student implements Serializable {
 class InterfaceExamples {
     public static void main(String[] args) {
         System.out.println("========== Example 1: Basic Interface ==========");
-        Animal dog = new Dog();
-        Animal cat = new Cat();
+        InterfaceAnimal dog = new InterfaceDog();
+        InterfaceAnimal cat = new InterfaceCat();
         dog.sound();
         dog.eat();
         cat.sound();
         cat.eat();
 
         System.out.println("\n========== Example 2: Multiple Interfaces ==========");
-        Document doc = new Document("Hello World");
+        InterfaceDocument doc = new InterfaceDocument("Hello World");
         doc.print();
         doc.show();
 
         System.out.println("\n========== Example 3: Interface Constants ==========");
-        Calculator calc = new Calculator();
-        System.out.println("Circle Area: " + calc.calculateCircleArea(5));
+        InterfaceCalculator calc = new InterfaceCalculator();
+        System.out.println("InterfaceCircle Area: " + calc.calculateCircleArea(5));
         calc.displayConstants();
 
         System.out.println("\n========== Example 4: Interface Extending Interface ==========");
-        Car car = new Car();
+        InterfaceCar car = new InterfaceCar();
         car.start();
         car.openDoor();
         car.stop();
 
         System.out.println("\n========== Example 5: Default Methods ==========");
-        Payment creditCard = new CreditCardPayment();
-        Payment upi = new UPIPayment();
+        InterfacePayment creditCard = new InterfaceCreditCardPayment();
+        InterfacePayment upi = new InterfaceUPIPayment();
 
         creditCard.processPayment(100.0);
         creditCard.printReceipt();
@@ -392,10 +392,10 @@ class InterfaceExamples {
         upi.sendConfirmation();
 
         System.out.println("\n========== Example 6: Static Methods ==========");
-        System.out.println("Static add: " + MathOperations.add(5, 10));
-        System.out.println("Static multiply: " + MathOperations.multiply(5, 10));
+        System.out.println("Static add: " + InterfaceMathOperations.add(5, 10));
+        System.out.println("Static multiply: " + InterfaceMathOperations.multiply(5, 10));
 
-        Addition addition = new Addition();
+        InterfaceAddition addition = new InterfaceAddition();
         System.out.println("Instance calculate: " + addition.calculate(5, 10));
 
         System.out.println("\n========== Example 7: Functional Interface ==========");
@@ -404,25 +404,25 @@ class InterfaceExamples {
         FunctionalInterfaceDemo.performOperation(5, 10, (a, b) -> a * b);
         FunctionalInterfaceDemo.performOperation(5, 10, (a, b) -> a - b);
 
-        System.out.println("\n========== Example 8: Shape Interface ==========");
-        Shape circle = new Circle(5);
-        Shape rectangle = new Rectangle(10, 5);
+        System.out.println("\n========== Example 8: InterfaceShape Interface ==========");
+        InterfaceShape circle = new InterfaceCircle(5);
+        InterfaceShape rectangle = new InterfaceRectangle(10, 5);
 
-        System.out.println("Circle:");
+        System.out.println("InterfaceCircle:");
         circle.display();
 
         System.out.println("\nRectangle:");
         rectangle.display();
 
         System.out.println("\n========== Example 9: Multiple Inheritance ==========");
-        Duck duck = new Duck();
+        InterfaceDuck duck = new InterfaceDuck();
         duck.fly();
         duck.swim();
         duck.walk();
 
         System.out.println("\n========== Example 10: Database Operations ==========");
-        DatabaseOperations mysql = new MySQLDatabase();
-        DatabaseOperations mongo = new MongoDBDatabase();
+        InterfaceDatabaseOperations mysql = new InterfaceMySQLDatabase();
+        InterfaceDatabaseOperations mongo = new InterfaceMongoDBDatabase();
 
         mysql.connect();
         mysql.executeQuery("SELECT * FROM users");
@@ -441,7 +441,7 @@ class InterfaceExamples {
         inner.innerMethod();
 
         System.out.println("\n========== Example 12: Marker Interface ==========");
-        Student student = new Student("John Doe", 101);
+        InterfaceStudent student = new InterfaceStudent("John Doe", 101);
         student.displayInfo();
     }
 }

@@ -3,7 +3,7 @@
 // ========== COMPILE-TIME POLYMORPHISM (METHOD OVERLOADING) ==========
 
 // Example 1: Method Overloading - Different Number of Parameters
-class Calculator {
+class PolyCalculator {
     // Method 1: Two parameters
     int add(int a, int b) {
         return a + b;
@@ -21,7 +21,7 @@ class Calculator {
 }
 
 // Example 2: Method Overloading - Different Types of Parameters
-class MathOperations {
+class PolyMathOperations {
     // Integer addition
     int add(int a, int b) {
         System.out.println("Adding integers");
@@ -87,39 +87,39 @@ class Box {
 // ========== RUNTIME POLYMORPHISM (METHOD OVERRIDING) ==========
 
 // Example 5: Basic Method Overriding
-class Animal {
+class PolyAnimal {
     void sound() {
-        System.out.println("Animal makes a sound");
+        System.out.println("PolyAnimal makes a sound");
     }
 
     void eat() {
-        System.out.println("Animal is eating");
+        System.out.println("PolyAnimal is eating");
     }
 }
 
-class Dog extends Animal {
+class PolyDog extends PolyAnimal {
     @Override
     void sound() {
-        System.out.println("Dog barks: Woof! Woof!");
+        System.out.println("PolyDog barks: Woof! Woof!");
     }
 }
 
-class Cat extends Animal {
+class PolyCat extends PolyAnimal {
     @Override
     void sound() {
-        System.out.println("Cat meows: Meow! Meow!");
+        System.out.println("PolyCat meows: Meow! Meow!");
     }
 }
 
-class Cow extends Animal {
+class PolyCow extends PolyAnimal {
     @Override
     void sound() {
-        System.out.println("Cow moos: Moo! Moo!");
+        System.out.println("PolyCow moos: Moo! Moo!");
     }
 }
 
 // Example 6: Dynamic Method Dispatch
-class Shape {
+class PolyShape {
     void draw() {
         System.out.println("Drawing a shape");
     }
@@ -129,10 +129,10 @@ class Shape {
     }
 }
 
-class Circle extends Shape {
+class PolyCircle extends PolyShape {
     double radius;
 
-    Circle(double radius) {
+    PolyCircle(double radius) {
         this.radius = radius;
     }
 
@@ -147,11 +147,11 @@ class Circle extends Shape {
     }
 }
 
-class Rectangle extends Shape {
+class PolyRectangle extends PolyShape {
     double length;
     double width;
 
-    Rectangle(double length, double width) {
+    PolyRectangle(double length, double width) {
         this.length = length;
         this.width = width;
     }
@@ -167,11 +167,11 @@ class Rectangle extends Shape {
     }
 }
 
-class Triangle extends Shape {
+class PolyTriangle extends PolyShape {
     double base;
     double height;
 
-    Triangle(double base, double height) {
+    PolyTriangle(double base, double height) {
         this.base = base;
         this.height = height;
     }
@@ -187,14 +187,14 @@ class Triangle extends Shape {
     }
 }
 
-// Example 7: Real-World Example - Payment System
-class Payment {
+// Example 7: Real-World Example - PolyPayment System
+class PolyPayment {
     void processPayment(double amount) {
         System.out.println("Processing payment: $" + amount);
     }
 }
 
-class CreditCardPayment extends Payment {
+class PolyCreditCardPayment extends PolyPayment {
     @Override
     void processPayment(double amount) {
         System.out.println("Processing Credit Card payment: $" + amount);
@@ -202,7 +202,7 @@ class CreditCardPayment extends Payment {
     }
 }
 
-class DebitCardPayment extends Payment {
+class PolyDebitCardPayment extends PolyPayment {
     @Override
     void processPayment(double amount) {
         System.out.println("Processing Debit Card payment: $" + amount);
@@ -210,7 +210,7 @@ class DebitCardPayment extends Payment {
     }
 }
 
-class UPIPayment extends Payment {
+class PolyUPIPayment extends PolyPayment {
     @Override
     void processPayment(double amount) {
         System.out.println("Processing UPI payment: ₹" + amount);
@@ -219,10 +219,10 @@ class UPIPayment extends Payment {
 }
 
 // Example 8: Polymorphism with Arrays
-class Employee {
+class PolyEmployee {
     String name;
 
-    Employee(String name) {
+    PolyEmployee(String name) {
         this.name = name;
     }
 
@@ -231,8 +231,8 @@ class Employee {
     }
 }
 
-class Manager extends Employee {
-    Manager(String name) {
+class PolyManager extends PolyEmployee {
+    PolyManager(String name) {
         super(name);
     }
 
@@ -242,8 +242,8 @@ class Manager extends Employee {
     }
 }
 
-class Developer extends Employee {
-    Developer(String name) {
+class PolyDeveloper extends PolyEmployee {
+    PolyDeveloper(String name) {
         super(name);
     }
 
@@ -253,8 +253,8 @@ class Developer extends Employee {
     }
 }
 
-class Designer extends Employee {
-    Designer(String name) {
+class PolyDesigner extends PolyEmployee {
+    PolyDesigner(String name) {
         super(name);
     }
 
@@ -265,11 +265,11 @@ class Designer extends Employee {
 }
 
 // Example 9: Real-World Example - Banking System
-class Account {
+class PolyAccount {
     String accountNumber;
     double balance;
 
-    Account(String accountNumber, double balance) {
+    PolyAccount(String accountNumber, double balance) {
         this.accountNumber = accountNumber;
         this.balance = balance;
     }
@@ -279,12 +279,12 @@ class Account {
     }
 
     void displayBalance() {
-        System.out.println("Account: " + accountNumber + ", Balance: $" + balance);
+        System.out.println("PolyAccount: " + accountNumber + ", Balance: $" + balance);
     }
 }
 
-class SavingsAccount extends Account {
-    SavingsAccount(String accountNumber, double balance) {
+class PolySavingsAccount extends PolyAccount {
+    PolySavingsAccount(String accountNumber, double balance) {
         super(accountNumber, balance);
     }
 
@@ -292,22 +292,22 @@ class SavingsAccount extends Account {
     void calculateInterest() {
         double interest = balance * 0.04; // 4% interest
         balance += interest;
-        System.out.println("Savings Account - Interest added: $" + interest);
+        System.out.println("Savings PolyAccount - Interest added: $" + interest);
     }
 }
 
-class CurrentAccount extends Account {
-    CurrentAccount(String accountNumber, double balance) {
+class PolyCurrentAccount extends PolyAccount {
+    PolyCurrentAccount(String accountNumber, double balance) {
         super(accountNumber, balance);
     }
 
     @Override
     void calculateInterest() {
-        System.out.println("Current Account - No interest");
+        System.out.println("Current PolyAccount - No interest");
     }
 }
 
-class FixedDeposit extends Account {
+class FixedDeposit extends PolyAccount {
     FixedDeposit(String accountNumber, double balance) {
         super(accountNumber, balance);
     }
@@ -321,33 +321,33 @@ class FixedDeposit extends Account {
 }
 
 // Example 10: Overloading vs Overriding Demonstration
-class Parent {
+class PolyParent {
     // Method to be overridden
     void display() {
-        System.out.println("Parent display");
+        System.out.println("PolyParent display");
     }
 
     // Method to be overloaded
     void show(int x) {
-        System.out.println("Parent show: " + x);
+        System.out.println("PolyParent show: " + x);
     }
 }
 
-class Child extends Parent {
+class PolyChild extends PolyParent {
     // Overriding parent's display method
     @Override
     void display() {
-        System.out.println("Child display");
+        System.out.println("PolyChild display");
     }
 
     // Overloading parent's show method
     void show(int x, int y) {
-        System.out.println("Child show: " + x + ", " + y);
+        System.out.println("PolyChild show: " + x + ", " + y);
     }
 
     // Overloading own show method
     void show(String message) {
-        System.out.println("Child show: " + message);
+        System.out.println("PolyChild show: " + message);
     }
 }
 
@@ -357,13 +357,13 @@ class PolymorphismExamples {
         System.out.println("========== COMPILE-TIME POLYMORPHISM ==========\n");
 
         System.out.println("Example 1: Method Overloading - Different Parameters");
-        Calculator calc = new Calculator();
+        PolyCalculator calc = new PolyCalculator();
         System.out.println("add(5, 10) = " + calc.add(5, 10));
         System.out.println("add(5, 10, 15) = " + calc.add(5, 10, 15));
         System.out.println("add(5, 10, 15, 20) = " + calc.add(5, 10, 15, 20));
 
         System.out.println("\nExample 2: Method Overloading - Different Types");
-        MathOperations math = new MathOperations();
+        PolyMathOperations math = new PolyMathOperations();
         System.out.println("Result: " + math.add(5, 10));
         System.out.println("Result: " + math.add(5.5, 10.5));
         System.out.println("Result: " + math.add("Hello", "World"));
@@ -385,17 +385,17 @@ class PolymorphismExamples {
         System.out.println("\n========== RUNTIME POLYMORPHISM ==========\n");
 
         System.out.println("Example 5: Basic Method Overriding");
-        Animal a1 = new Dog();
-        Animal a2 = new Cat();
-        Animal a3 = new Cow();
+        PolyAnimal a1 = new PolyDog();
+        PolyAnimal a2 = new PolyCat();
+        PolyAnimal a3 = new PolyCow();
         a1.sound();
         a2.sound();
         a3.sound();
 
         System.out.println("\nExample 6: Dynamic Method Dispatch");
-        Shape s1 = new Circle(5);
-        Shape s2 = new Rectangle(10, 5);
-        Shape s3 = new Triangle(10, 8);
+        PolyShape s1 = new PolyCircle(5);
+        PolyShape s2 = new PolyRectangle(10, 5);
+        PolyShape s3 = new PolyTriangle(10, 8);
 
         s1.draw();
         System.out.println("Area: " + s1.area());
@@ -406,10 +406,10 @@ class PolymorphismExamples {
         s3.draw();
         System.out.println("Area: " + s3.area());
 
-        System.out.println("\nExample 7: Payment System");
-        Payment p1 = new CreditCardPayment();
-        Payment p2 = new DebitCardPayment();
-        Payment p3 = new UPIPayment();
+        System.out.println("\nExample 7: PolyPayment System");
+        PolyPayment p1 = new PolyCreditCardPayment();
+        PolyPayment p2 = new PolyDebitCardPayment();
+        PolyPayment p3 = new PolyUPIPayment();
 
         p1.processPayment(100.0);
         System.out.println();
@@ -418,22 +418,22 @@ class PolymorphismExamples {
         p3.processPayment(2000.0);
 
         System.out.println("\nExample 8: Polymorphism with Arrays");
-        Employee[] employees = new Employee[3];
-        employees[0] = new Manager("Alice");
-        employees[1] = new Developer("Bob");
-        employees[2] = new Designer("Charlie");
+        PolyEmployee[] employees = new PolyEmployee[3];
+        employees[0] = new PolyManager("Alice");
+        employees[1] = new PolyDeveloper("Bob");
+        employees[2] = new PolyDesigner("Charlie");
 
-        for (Employee emp : employees) {
+        for (PolyEmployee emp : employees) {
             emp.work();
         }
 
         System.out.println("\nExample 9: Banking System");
-        Account[] accounts = new Account[3];
-        accounts[0] = new SavingsAccount("SA001", 10000);
-        accounts[1] = new CurrentAccount("CA001", 5000);
+        PolyAccount[] accounts = new PolyAccount[3];
+        accounts[0] = new PolySavingsAccount("SA001", 10000);
+        accounts[1] = new PolyCurrentAccount("CA001", 5000);
         accounts[2] = new FixedDeposit("FD001", 20000);
 
-        for (Account acc : accounts) {
+        for (PolyAccount acc : accounts) {
             acc.displayBalance();
             acc.calculateInterest();
             acc.displayBalance();
@@ -441,7 +441,7 @@ class PolymorphismExamples {
         }
 
         System.out.println("Example 10: Overloading vs Overriding");
-        Child child = new Child();
+        PolyChild child = new PolyChild();
         child.display(); // Overridden method
         child.show(10); // Inherited method
         child.show(10, 20); // Overloaded method

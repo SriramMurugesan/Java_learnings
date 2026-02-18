@@ -19,10 +19,10 @@ class MyRunnable2 implements Runnable {
 }
 
 // Example 3: Runnable with Constructor
-class Task implements Runnable {
+class RunnableTask implements Runnable {
     String taskName;
     
-    Task(String name) {
+    RunnableTask(String name) {
         this.taskName = name;
     }
     
@@ -34,7 +34,7 @@ class Task implements Runnable {
 }
 
 // Example 4: Shared Runnable
-class Counter implements Runnable {
+class RunnableCounter implements Runnable {
     public void run() {
         for (int i = 1; i <= 3; i++) {
             System.out.println(Thread.currentThread().getName() + ": " + i);
@@ -62,8 +62,8 @@ public class runnable_examples {
         
         // Example 3: Runnable with Constructor
         System.out.println("\nExample 3: Named Tasks");
-        Thread t3 = new Thread(new Task("Task-A"));
-        Thread t4 = new Thread(new Task("Task-B"));
+        Thread t3 = new Thread(new RunnableTask("RunnableTask-A"));
+        Thread t4 = new Thread(new RunnableTask("RunnableTask-B"));
         t3.start();
         t4.start();
         t3.join();
@@ -71,7 +71,7 @@ public class runnable_examples {
         
         // Example 4: Shared Runnable
         System.out.println("\nExample 4: Shared Runnable");
-        Counter counter = new Counter();
+        RunnableCounter counter = new RunnableCounter();
         Thread t5 = new Thread(counter, "Thread-1");
         Thread t6 = new Thread(counter, "Thread-2");
         t5.start();

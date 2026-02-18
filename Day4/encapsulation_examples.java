@@ -1,7 +1,7 @@
 // ==================== ENCAPSULATION EXAMPLES ====================
 
 // Example 1: Basic Encapsulation with Generic Getters and Setters
-class Student {
+class EncapsulationStudent {
     // Private variables (data hiding)
     private String name;
     private int age;
@@ -46,7 +46,7 @@ class Student {
 }
 
 // Example 2: Specific Getters and Setters with Validation
-class Employee {
+class EncapsulationEmployee {
     private String name;
     private int age;
     private double salary;
@@ -132,13 +132,13 @@ class ShadowingDemo {
 }
 
 // Example 4: Constructors - Default Constructor
-class Book {
+class EncapsulationBook {
     private String title;
     private String author;
     private double price;
 
     // Default Constructor (no parameters)
-    public Book() {
+    public EncapsulationBook() {
         this.title = "Unknown";
         this.author = "Unknown";
         this.price = 0.0;
@@ -153,14 +153,14 @@ class Book {
 }
 
 // Example 5: Parameterized Constructor
-class Car {
+class EncapsulationCar {
     private String brand;
     private String model;
     private int year;
     private double price;
 
     // Parameterized Constructor
-    public Car(String brand, String model, int year, double price) {
+    public EncapsulationCar(String brand, String model, int year, double price) {
         this.brand = brand;
         this.model = model;
         this.year = year;
@@ -176,14 +176,14 @@ class Car {
 }
 
 // Example 6: Constructor Overloading
-class BankAccount {
+class EncapsulationBankAccount {
     private String accountNumber;
     private String holderName;
     private double balance;
     private String accountType;
 
     // Constructor 1: No parameters (default)
-    public BankAccount() {
+    public EncapsulationBankAccount() {
         this.accountNumber = "0000000000";
         this.holderName = "Unknown";
         this.balance = 0.0;
@@ -191,7 +191,7 @@ class BankAccount {
     }
 
     // Constructor 2: Account number and holder name
-    public BankAccount(String accountNumber, String holderName) {
+    public EncapsulationBankAccount(String accountNumber, String holderName) {
         this.accountNumber = accountNumber;
         this.holderName = holderName;
         this.balance = 0.0;
@@ -199,7 +199,7 @@ class BankAccount {
     }
 
     // Constructor 3: All parameters
-    public BankAccount(String accountNumber, String holderName, double balance, String accountType) {
+    public EncapsulationBankAccount(String accountNumber, String holderName, double balance, String accountType) {
         this.accountNumber = accountNumber;
         this.holderName = holderName;
         this.balance = balance;
@@ -275,18 +275,18 @@ class LibraryBook {
         if (isAvailable) {
             isAvailable = false;
             borrowCount++;
-            System.out.println("Book borrowed successfully!");
+            System.out.println("EncapsulationBook borrowed successfully!");
         } else {
-            System.out.println("Book is not available!");
+            System.out.println("EncapsulationBook is not available!");
         }
     }
 
     public void returnBook() {
         if (!isAvailable) {
             isAvailable = true;
-            System.out.println("Book returned successfully!");
+            System.out.println("EncapsulationBook returned successfully!");
         } else {
-            System.out.println("Book was not borrowed!");
+            System.out.println("EncapsulationBook was not borrowed!");
         }
     }
 
@@ -324,14 +324,14 @@ class LibraryBook {
 class EncapsulationExamples {
     public static void main(String[] args) {
         System.out.println("========== Example 1: Basic Encapsulation ==========");
-        Student s1 = new Student();
+        EncapsulationStudent s1 = new EncapsulationStudent();
         s1.setName("John Doe");
         s1.setAge(20);
         s1.setCourse("Computer Science");
         s1.displayInfo();
 
         System.out.println("\n========== Example 2: Specific Getters/Setters ==========");
-        Employee emp = new Employee();
+        EncapsulationEmployee emp = new EncapsulationEmployee();
         emp.setName("Alice");
         emp.setAge(25);
         emp.setSalary(5000);
@@ -348,17 +348,17 @@ class EncapsulationExamples {
         System.out.println("After correct setter: " + demo.getValue()); // 100
 
         System.out.println("\n========== Example 4: Default Constructor ==========");
-        Book book1 = new Book();
+        EncapsulationBook book1 = new EncapsulationBook();
         book1.displayInfo();
 
         System.out.println("\n========== Example 5: Parameterized Constructor ==========");
-        Car car1 = new Car("Toyota", "Camry", 2023, 30000);
+        EncapsulationCar car1 = new EncapsulationCar("Toyota", "Camry", 2023, 30000);
         car1.displayInfo();
 
         System.out.println("\n========== Example 6: Constructor Overloading ==========");
-        BankAccount acc1 = new BankAccount();
-        BankAccount acc2 = new BankAccount("1234567890", "Bob");
-        BankAccount acc3 = new BankAccount("9876543210", "Charlie", 5000, "Current");
+        EncapsulationBankAccount acc1 = new EncapsulationBankAccount();
+        EncapsulationBankAccount acc2 = new EncapsulationBankAccount("1234567890", "Bob");
+        EncapsulationBankAccount acc3 = new EncapsulationBankAccount("9876543210", "Charlie", 5000, "Current");
         System.out.println("Account 1:");
         acc1.displayInfo();
         System.out.println("\nAccount 2:");

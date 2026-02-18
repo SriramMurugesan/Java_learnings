@@ -105,10 +105,10 @@ class InputValidation {
 }
 
 // Example 5: Business Logic Validation
-class BankAccount {
+class ThrowBankAccount {
     private double balance;
     
-    public BankAccount(double initialBalance) {
+    public ThrowBankAccount(double initialBalance) {
         this.balance = initialBalance;
     }
     
@@ -138,7 +138,7 @@ class BusinessLogicValidation {
     public static void demonstrateBusinessLogic() {
         System.out.println("=== Business Logic Validation ===");
         
-        BankAccount account = new BankAccount(1000);
+        ThrowBankAccount account = new ThrowBankAccount(1000);
         
         try {
             account.deposit(500);

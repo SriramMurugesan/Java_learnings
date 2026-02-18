@@ -1,4 +1,4 @@
-package com.example.day10;
+package Day10.examples;
 
 import java.io.IOException;
 import javax.servlet.ServletConfig;
@@ -20,7 +20,7 @@ public class LifeCycleServlet extends HttpServlet {
 
     // 2. Service: Called for every request (mapped to doGet/doPost)
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) 
+    protected void service(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         System.out.println("--- service() method called: Handling a request ---");
         // Calls doGet or doPost internally
@@ -28,7 +28,7 @@ public class LifeCycleServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         System.out.println("--- doGet() method called ---");
         resp.getWriter().println("<h1>Check your server console for lifecycle logs!</h1>");

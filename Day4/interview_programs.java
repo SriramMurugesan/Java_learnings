@@ -1,12 +1,12 @@
 // ==================== DAY 4 INTERVIEW PROGRAMS ====================
 
 // Program 1: Create a Student class with encapsulation
-class Student {
+class InterviewStudent {
     private String name;
     private int rollNumber;
     private double[] marks;
 
-    public Student(String name, int rollNumber, double[] marks) {
+    public InterviewStudent(String name, int rollNumber, double[] marks) {
         this.name = name;
         this.rollNumber = rollNumber;
         this.marks = marks;
@@ -42,13 +42,13 @@ class Student {
     }
 }
 
-// Program 2: Inheritance - Employee Hierarchy
-class Employee {
+// Program 2: Inheritance - InterviewEmployee Hierarchy
+class InterviewEmployee {
     protected String name;
     protected int id;
     protected double baseSalary;
 
-    public Employee(String name, int id, double baseSalary) {
+    public InterviewEmployee(String name, int id, double baseSalary) {
         this.name = name;
         this.id = id;
         this.baseSalary = baseSalary;
@@ -65,11 +65,11 @@ class Employee {
     }
 }
 
-class Manager extends Employee {
+class InterviewManager extends InterviewEmployee {
     private double bonus;
     private double allowance;
 
-    public Manager(String name, int id, double baseSalary, double bonus, double allowance) {
+    public InterviewManager(String name, int id, double baseSalary, double bonus, double allowance) {
         super(name, id, baseSalary);
         this.bonus = bonus;
         this.allowance = allowance;
@@ -81,10 +81,10 @@ class Manager extends Employee {
     }
 }
 
-class Developer extends Employee {
+class InterviewDeveloper extends InterviewEmployee {
     private double projectBonus;
 
-    public Developer(String name, int id, double baseSalary, double projectBonus) {
+    public InterviewDeveloper(String name, int id, double baseSalary, double projectBonus) {
         super(name, id, baseSalary);
         this.projectBonus = projectBonus;
     }
@@ -95,8 +95,8 @@ class Developer extends Employee {
     }
 }
 
-// Program 3: Polymorphism - Shape Area Calculator
-abstract class Shape {
+// Program 3: Polymorphism - InterviewShape Area InterviewCalculator
+abstract class InterviewShape {
     abstract double area();
 
     abstract double perimeter();
@@ -107,10 +107,10 @@ abstract class Shape {
     }
 }
 
-class Circle extends Shape {
+class InterviewCircle extends InterviewShape {
     double radius;
 
-    Circle(double radius) {
+    InterviewCircle(double radius) {
         this.radius = radius;
     }
 
@@ -125,11 +125,11 @@ class Circle extends Shape {
     }
 }
 
-class Rectangle extends Shape {
+class InterviewRectangle extends InterviewShape {
     double length;
     double width;
 
-    Rectangle(double length, double width) {
+    InterviewRectangle(double length, double width) {
         this.length = length;
         this.width = width;
     }
@@ -191,12 +191,12 @@ class UPI implements Payable {
 }
 
 // Program 5: Bank Account with Abstraction
-abstract class BankAccount {
+abstract class InterviewBankAccount {
     protected String accountNumber;
     protected String holderName;
     protected double balance;
 
-    public BankAccount(String accountNumber, String holderName, double balance) {
+    public InterviewBankAccount(String accountNumber, String holderName, double balance) {
         this.accountNumber = accountNumber;
         this.holderName = holderName;
         this.balance = balance;
@@ -225,8 +225,8 @@ abstract class BankAccount {
     }
 }
 
-class SavingsAccount extends BankAccount {
-    public SavingsAccount(String accountNumber, String holderName, double balance) {
+class InterviewSavingsAccount extends InterviewBankAccount {
+    public InterviewSavingsAccount(String accountNumber, String holderName, double balance) {
         super(accountNumber, holderName, balance);
     }
 
@@ -273,27 +273,27 @@ class Image implements Drawable, Resizable {
 }
 
 // Program 7: Constructor Chaining
-class Vehicle {
+class InterviewVehicle {
     String brand;
     int year;
 
-    Vehicle() {
+    InterviewVehicle() {
         this("Unknown", 2024);
     }
 
-    Vehicle(String brand) {
+    InterviewVehicle(String brand) {
         this(brand, 2024);
     }
 
-    Vehicle(String brand, int year) {
+    InterviewVehicle(String brand, int year) {
         this.brand = brand;
         this.year = year;
-        System.out.println("Vehicle created: " + brand + " (" + year + ")");
+        System.out.println("InterviewVehicle created: " + brand + " (" + year + ")");
     }
 }
 
 // Program 8: Method Overloading and Overriding
-class Calculator {
+class InterviewCalculator {
     // Method Overloading
     int add(int a, int b) {
         return a + b;
@@ -308,7 +308,7 @@ class Calculator {
     }
 }
 
-class ScientificCalculator extends Calculator {
+class ScientificCalculator extends InterviewCalculator {
     // Method Overriding
     @Override
     int add(int a, int b) {
@@ -378,24 +378,24 @@ class FileLogger implements Logger {
 // ==================== MAIN CLASS ====================
 class InterviewPrograms {
     public static void main(String[] args) {
-        System.out.println("========== Program 1: Student Class ==========");
+        System.out.println("========== Program 1: InterviewStudent Class ==========");
         double[] marks = { 85, 90, 78, 92, 88 };
-        Student student = new Student("John Doe", 101, marks);
+        InterviewStudent student = new InterviewStudent("John Doe", 101, marks);
         student.displayInfo();
 
-        System.out.println("\n========== Program 2: Employee Hierarchy ==========");
-        Employee manager = new Manager("Alice", 1001, 5000, 2000, 1000);
-        Employee developer = new Developer("Bob", 1002, 4000, 1500);
+        System.out.println("\n========== Program 2: InterviewEmployee Hierarchy ==========");
+        InterviewEmployee manager = new InterviewManager("Alice", 1001, 5000, 2000, 1000);
+        InterviewEmployee developer = new InterviewDeveloper("Bob", 1002, 4000, 1500);
 
         manager.displayInfo();
         System.out.println();
         developer.displayInfo();
 
-        System.out.println("\n========== Program 3: Shape Area Calculator ==========");
-        Shape circle = new Circle(5);
-        Shape rectangle = new Rectangle(10, 5);
+        System.out.println("\n========== Program 3: InterviewShape Area InterviewCalculator ==========");
+        InterviewShape circle = new InterviewCircle(5);
+        InterviewShape rectangle = new InterviewRectangle(10, 5);
 
-        System.out.println("Circle:");
+        System.out.println("InterviewCircle:");
         circle.display();
 
         System.out.println("\nRectangle:");
@@ -413,7 +413,7 @@ class InterviewPrograms {
         upi.generateReceipt();
 
         System.out.println("\n========== Program 5: Bank Account ==========");
-        BankAccount savings = new SavingsAccount("SA001", "John", 10000);
+        InterviewBankAccount savings = new InterviewSavingsAccount("SA001", "John", 10000);
         savings.displayBalance();
         savings.deposit(2000);
         savings.calculateInterest();
@@ -426,9 +426,9 @@ class InterviewPrograms {
         image.draw();
 
         System.out.println("\n========== Program 7: Constructor Chaining ==========");
-        Vehicle v1 = new Vehicle();
-        Vehicle v2 = new Vehicle("Toyota");
-        Vehicle v3 = new Vehicle("Honda", 2023);
+        InterviewVehicle v1 = new InterviewVehicle();
+        InterviewVehicle v2 = new InterviewVehicle("Toyota");
+        InterviewVehicle v3 = new InterviewVehicle("Honda", 2023);
 
         System.out.println("\n========== Program 8: Overloading and Overriding ==========");
         ScientificCalculator calc = new ScientificCalculator();

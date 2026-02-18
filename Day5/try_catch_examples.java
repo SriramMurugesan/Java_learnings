@@ -230,7 +230,7 @@ class MultiCatch {
 }
 
 // Example 10: Getting Exception Information
-class ExceptionInformation {
+class TryCatchExceptionInformation {
     public static void demonstrateExceptionInfo() {
         System.out.println("=== Exception Information Methods ===");
         
@@ -257,10 +257,10 @@ class ExceptionInformation {
     }
 }
 
-// Example 11: Practical Calculator Example
-class Calculator {
+// Example 11: Practical TryCatchCalculator Example
+class TryCatchCalculator {
     public static void demonstrateCalculator() {
-        System.out.println("=== Practical Calculator Example ===");
+        System.out.println("=== Practical TryCatchCalculator Example ===");
         
         try {
             int a = 10;
@@ -391,8 +391,8 @@ public class try_catch_examples {
         MultipleResources.demonstrateMultipleResources();
         NestedTryCatch.demonstrateNested();
         MultiCatch.demonstrateMultiCatch();
-        ExceptionInformation.demonstrateExceptionInfo();
-        Calculator.demonstrateCalculator();
+        TryCatchExceptionInformation.demonstrateExceptionInfo();
+        TryCatchCalculator.demonstrateCalculator();
         ArrayOperations.demonstrateArrayOperations();
         StringParsing.demonstrateStringParsing();
         FinallyWithReturn.demonstrateFinallyWithReturn();

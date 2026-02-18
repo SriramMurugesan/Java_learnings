@@ -1,7 +1,7 @@
 // ==================== INHERITANCE EXAMPLES ====================
 
 // Example 1: Single Inheritance
-class Animal {
+class InheritanceAnimal {
     String name;
     int age;
 
@@ -14,7 +14,7 @@ class Animal {
     }
 }
 
-class Dog extends Animal {
+class InheritanceDog extends InheritanceAnimal {
     String breed;
 
     void bark() {
@@ -27,26 +27,26 @@ class Dog extends Animal {
 }
 
 // Example 2: Multilevel Inheritance
-class LivingBeing {
+class InheritanceLivingBeing {
     void breathe() {
         System.out.println("Breathing...");
     }
 }
 
-class Mammal extends LivingBeing {
+class InheritanceMammal extends InheritanceLivingBeing {
     void giveBirth() {
         System.out.println("Giving birth to young ones");
     }
 }
 
-class Human extends Mammal {
+class InheritanceHuman extends InheritanceMammal {
     void speak() {
         System.out.println("Speaking...");
     }
 }
 
 // Example 3: Hierarchical Inheritance
-class Vehicle {
+class InheritanceVehicle {
     String brand;
     int year;
 
@@ -59,7 +59,7 @@ class Vehicle {
     }
 }
 
-class Car extends Vehicle {
+class InheritanceCar extends InheritanceVehicle {
     int doors;
 
     void openTrunk() {
@@ -67,7 +67,7 @@ class Car extends Vehicle {
     }
 }
 
-class Bike extends Vehicle {
+class Bike extends InheritanceVehicle {
     boolean hasCarrier;
 
     void kickStart() {
@@ -75,7 +75,7 @@ class Bike extends Vehicle {
     }
 }
 
-class Truck extends Vehicle {
+class Truck extends InheritanceVehicle {
     double loadCapacity;
 
     void loadCargo() {
@@ -84,7 +84,7 @@ class Truck extends Vehicle {
 }
 
 // Example 4: Method Overriding
-class Shape {
+class InheritanceShape {
     void draw() {
         System.out.println("Drawing a shape");
     }
@@ -94,10 +94,10 @@ class Shape {
     }
 }
 
-class Circle extends Shape {
+class InheritanceCircle extends InheritanceShape {
     double radius;
 
-    Circle(double radius) {
+    InheritanceCircle(double radius) {
         this.radius = radius;
     }
 
@@ -112,11 +112,11 @@ class Circle extends Shape {
     }
 }
 
-class Rectangle extends Shape {
+class InheritanceRectangle extends InheritanceShape {
     double length;
     double width;
 
-    Rectangle(double length, double width) {
+    InheritanceRectangle(double length, double width) {
         this.length = length;
         this.width = width;
     }
@@ -133,41 +133,41 @@ class Rectangle extends Shape {
 }
 
 // Example 5: Using super keyword
-class Parent {
+class InheritanceParent {
     int x = 10;
 
-    Parent() {
-        System.out.println("Parent constructor");
+    InheritanceParent() {
+        System.out.println("InheritanceParent constructor");
     }
 
-    Parent(String message) {
-        System.out.println("Parent: " + message);
+    InheritanceParent(String message) {
+        System.out.println("InheritanceParent: " + message);
     }
 
     void display() {
-        System.out.println("Parent display method");
+        System.out.println("InheritanceParent display method");
     }
 }
 
-class Child extends Parent {
+class InheritanceChild extends InheritanceParent {
     int x = 20;
 
-    Child() {
+    InheritanceChild() {
         super(); // Call parent's no-arg constructor
-        System.out.println("Child constructor");
+        System.out.println("InheritanceChild constructor");
     }
 
-    Child(String message) {
+    InheritanceChild(String message) {
         super(message); // Call parent's parameterized constructor
-        System.out.println("Child: " + message);
+        System.out.println("InheritanceChild: " + message);
     }
 
     @Override
     void display() {
-        System.out.println("Child x: " + x);
-        System.out.println("Parent x: " + super.x);
+        System.out.println("InheritanceChild x: " + x);
+        System.out.println("InheritanceParent x: " + super.x);
         super.display(); // Call parent's display method
-        System.out.println("Child display method");
+        System.out.println("InheritanceChild display method");
     }
 }
 
@@ -192,13 +192,13 @@ class ChildClass extends ParentClass {
     }
 }
 
-// Example 7: Real-World Example - Employee Hierarchy
-class Employee {
+// Example 7: Real-World Example - InheritanceEmployee Hierarchy
+class InheritanceEmployee {
     String name;
     int id;
     double baseSalary;
 
-    Employee(String name, int id, double baseSalary) {
+    InheritanceEmployee(String name, int id, double baseSalary) {
         this.name = name;
         this.id = id;
         this.baseSalary = baseSalary;
@@ -215,10 +215,10 @@ class Employee {
     }
 }
 
-class Manager extends Employee {
+class InheritanceManager extends InheritanceEmployee {
     double bonus;
 
-    Manager(String name, int id, double baseSalary, double bonus) {
+    InheritanceManager(String name, int id, double baseSalary, double bonus) {
         super(name, id, baseSalary);
         this.bonus = bonus;
     }
@@ -233,10 +233,10 @@ class Manager extends Employee {
     }
 }
 
-class Developer extends Employee {
+class InheritanceDeveloper extends InheritanceEmployee {
     String programmingLanguage;
 
-    Developer(String name, int id, double baseSalary, String programmingLanguage) {
+    InheritanceDeveloper(String name, int id, double baseSalary, String programmingLanguage) {
         super(name, id, baseSalary);
         this.programmingLanguage = programmingLanguage;
     }
@@ -282,23 +282,23 @@ class DerivedClass extends BaseClass {
 // Example 9: Method Hiding (Static Methods)
 class ParentStatic {
     static void display() {
-        System.out.println("Parent static method");
+        System.out.println("InheritanceParent static method");
     }
 }
 
 class ChildStatic extends ParentStatic {
     static void display() {
-        System.out.println("Child static method");
+        System.out.println("InheritanceChild static method");
     }
 }
 
 // Example 10: Real-World Example - Bank Account System
-class BankAccount {
+class InheritanceBankAccount {
     protected String accountNumber;
     protected String holderName;
     protected double balance;
 
-    BankAccount(String accountNumber, String holderName, double balance) {
+    InheritanceBankAccount(String accountNumber, String holderName, double balance) {
         this.accountNumber = accountNumber;
         this.holderName = holderName;
         this.balance = balance;
@@ -323,10 +323,10 @@ class BankAccount {
     }
 }
 
-class SavingsAccount extends BankAccount {
+class InheritanceSavingsAccount extends InheritanceBankAccount {
     double interestRate;
 
-    SavingsAccount(String accountNumber, String holderName, double balance, double interestRate) {
+    InheritanceSavingsAccount(String accountNumber, String holderName, double balance, double interestRate) {
         super(accountNumber, holderName, balance);
         this.interestRate = interestRate;
     }
@@ -338,10 +338,10 @@ class SavingsAccount extends BankAccount {
     }
 }
 
-class CurrentAccount extends BankAccount {
+class InheritanceCurrentAccount extends InheritanceBankAccount {
     double overdraftLimit;
 
-    CurrentAccount(String accountNumber, String holderName, double balance, double overdraftLimit) {
+    InheritanceCurrentAccount(String accountNumber, String holderName, double balance, double overdraftLimit) {
         super(accountNumber, holderName, balance);
         this.overdraftLimit = overdraftLimit;
     }
@@ -361,7 +361,7 @@ class CurrentAccount extends BankAccount {
 class InheritanceExamples {
     public static void main(String[] args) {
         System.out.println("========== Example 1: Single Inheritance ==========");
-        Dog dog = new Dog();
+        InheritanceDog dog = new InheritanceDog();
         dog.name = "Buddy";
         dog.age = 3;
         dog.breed = "Golden Retriever";
@@ -370,13 +370,13 @@ class InheritanceExamples {
         dog.wagTail();
 
         System.out.println("\n========== Example 2: Multilevel Inheritance ==========");
-        Human human = new Human();
+        InheritanceHuman human = new InheritanceHuman();
         human.breathe();
         human.giveBirth();
         human.speak();
 
         System.out.println("\n========== Example 3: Hierarchical Inheritance ==========");
-        Car car = new Car();
+        InheritanceCar car = new InheritanceCar();
         car.brand = "Toyota";
         car.doors = 4;
         car.start();
@@ -389,32 +389,32 @@ class InheritanceExamples {
         bike.kickStart();
 
         System.out.println("\n========== Example 4: Method Overriding ==========");
-        Shape shape1 = new Circle(5);
-        Shape shape2 = new Rectangle(10, 5);
+        InheritanceShape shape1 = new InheritanceCircle(5);
+        InheritanceShape shape2 = new InheritanceRectangle(10, 5);
 
         shape1.draw();
-        System.out.println("Circle Area: " + shape1.area());
+        System.out.println("InheritanceCircle Area: " + shape1.area());
 
         shape2.draw();
-        System.out.println("Rectangle Area: " + shape2.area());
+        System.out.println("InheritanceRectangle Area: " + shape2.area());
 
         System.out.println("\n========== Example 5: Using super keyword ==========");
-        Child child1 = new Child();
+        InheritanceChild child1 = new InheritanceChild();
         System.out.println();
-        Child child2 = new Child("Hello");
+        InheritanceChild child2 = new InheritanceChild("Hello");
         System.out.println();
         child2.display();
 
         System.out.println("\n========== Example 6: Constructor Chaining ==========");
         ChildClass childClass = new ChildClass();
 
-        System.out.println("\n========== Example 7: Employee Hierarchy ==========");
-        Manager manager = new Manager("Alice", 101, 5000, 2000);
+        System.out.println("\n========== Example 7: InheritanceEmployee Hierarchy ==========");
+        InheritanceManager manager = new InheritanceManager("Alice", 101, 5000, 2000);
         manager.displayInfo();
         manager.conductMeeting();
 
         System.out.println();
-        Developer developer = new Developer("Bob", 102, 4000, "Java");
+        InheritanceDeveloper developer = new InheritanceDeveloper("Bob", 102, 4000, "Java");
         developer.displayInfo();
         developer.writeCode();
 
@@ -426,17 +426,17 @@ class InheritanceExamples {
         ParentStatic.display();
         ChildStatic.display();
         ParentStatic obj = new ChildStatic();
-        obj.display(); // Calls Parent's static method (method hiding!)
+        obj.display(); // Calls InheritanceParent's static method (method hiding!)
 
         System.out.println("\n========== Example 10: Bank Account System ==========");
-        SavingsAccount savings = new SavingsAccount("SA001", "John", 10000, 4);
+        InheritanceSavingsAccount savings = new InheritanceSavingsAccount("SA001", "John", 10000, 4);
         savings.displayBalance();
         savings.deposit(2000);
         savings.addInterest();
         savings.displayBalance();
 
         System.out.println();
-        CurrentAccount current = new CurrentAccount("CA001", "Jane", 5000, 2000);
+        InheritanceCurrentAccount current = new InheritanceCurrentAccount("CA001", "Jane", 5000, 2000);
         current.displayBalance();
         current.withdraw(6000); // Uses overdraft
         current.displayBalance();

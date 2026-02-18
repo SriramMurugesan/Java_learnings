@@ -52,7 +52,7 @@ class MultipleThrows {
 }
 
 // Example 3: Exception Propagation
-class ExceptionPropagation {
+class ThrowsExceptionPropagation {
     // Level 3: Throws exception
     public static void methodC() throws IOException {
         System.out.println("  methodC: Throwing IOException");
@@ -157,11 +157,11 @@ class CheckedVsUncheckedThrows {
 }
 
 // Example 6: Throws in Constructors
-class DatabaseConnection {
+class ThrowsDatabaseConnection {
     private String connectionString;
     
     // Constructor throws exception
-    public DatabaseConnection(String url) throws IOException {
+    public ThrowsDatabaseConnection(String url) throws IOException {
         if (url == null || url.isEmpty()) {
             throw new IOException("Invalid connection URL");
         }
@@ -175,14 +175,14 @@ class ConstructorThrows {
         System.out.println("=== Constructor Throws Example ===");
         
         try {
-            DatabaseConnection db = new DatabaseConnection("jdbc:mysql://localhost");
+            ThrowsDatabaseConnection db = new ThrowsDatabaseConnection("jdbc:mysql://localhost");
             System.out.println("Connection successful");
         } catch (IOException e) {
             System.out.println("Connection failed: " + e.getMessage());
         }
         
         try {
-            DatabaseConnection db = new DatabaseConnection("");
+            ThrowsDatabaseConnection db = new ThrowsDatabaseConnection("");
         } catch (IOException e) {
             System.out.println("Connection failed: " + e.getMessage());
         }
@@ -192,33 +192,33 @@ class ConstructorThrows {
 }
 
 // Example 7: Method Overriding with Throws
-class Parent {
+class ThrowsParent {
     public void method() throws IOException {
-        System.out.println("Parent method");
+        System.out.println("ThrowsParent method");
     }
 }
 
-class Child1 extends Parent {
+class ThrowsChild1 extends ThrowsParent {
     // Valid: Same exception
     @Override
     public void method() throws IOException {
-        System.out.println("Child1: Same exception");
+        System.out.println("ThrowsChild1: Same exception");
     }
 }
 
-class Child2 extends Parent {
+class ThrowsChild2 extends ThrowsParent {
     // Valid: Subclass exception
     @Override
     public void method() throws FileNotFoundException {
-        System.out.println("Child2: Subclass exception (FileNotFoundException)");
+        System.out.println("ThrowsChild2: Subclass exception (FileNotFoundException)");
     }
 }
 
-class Child3 extends Parent {
+class ThrowsChild3 extends ThrowsParent {
     // Valid: No exception
     @Override
     public void method() {
-        System.out.println("Child3: No exception");
+        System.out.println("ThrowsChild3: No exception");
     }
 }
 
@@ -227,13 +227,13 @@ class OverridingThrows {
         System.out.println("=== Method Overriding with Throws ===");
         
         try {
-            Parent p1 = new Child1();
+            ThrowsParent p1 = new ThrowsChild1();
             p1.method();
             
-            Parent p2 = new Child2();
+            ThrowsParent p2 = new ThrowsChild2();
             p2.method();
             
-            Parent p3 = new Child3();
+            ThrowsParent p3 = new ThrowsChild3();
             p3.method();
         } catch (IOException e) {
             System.out.println("Exception: " + e.getMessage());
@@ -412,7 +412,7 @@ public class throws_examples {
         // Run all demonstrations
         BasicThrows.demonstrateBasicThrows();
         MultipleThrows.demonstrateMultipleThrows();
-        ExceptionPropagation.demonstratePropagation();
+        ThrowsExceptionPropagation.demonstratePropagation();
         HandleOrPropagate.demonstrateOptions();
         CheckedVsUncheckedThrows.demonstrateCheckedVsUnchecked();
         ConstructorThrows.demonstrateConstructorThrows();

@@ -1,4 +1,4 @@
-package com.example.day10;
+package Day10.examples;
 
 import java.io.IOException;
 import java.io.PrintWriter;
