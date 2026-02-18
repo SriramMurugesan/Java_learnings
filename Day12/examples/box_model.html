@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .box {
+            /* 1. Content width/height */
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+
+            /* 2. Padding (Inside Space) */
+            padding: 20px;
+
+            /* 3. Border (The Edge) */
+            border: 5px solid blue;
+
+            /* 4. Margin (Outside Space) */
+            margin: 30px;
+        }
+
+        .container {
+            border: 2px dashed red;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            I am a BOX!<br>
+            Content: 200x100<br>
+            Padding: 20px<br>
+            Border: 5px<br>
+            Margin: 30px
+        </div>
+    </div>
+
+</body>
+
+</html>

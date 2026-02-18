@@ -1,0 +1,72 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Includes padding and border in element's total width/height */
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin-top: 10px;
+    display: flex; /* Flexbox Magic */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Space between items */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff9900; /* Change color on hover */
+}
+
+/* Main Content Area */
+.container {
+    max-width: 800px;
+    margin: 20px auto; /* Centers the container */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+/* Headings */
+h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+}
