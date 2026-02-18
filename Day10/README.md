@@ -17,6 +17,7 @@ Welcome to Day 10! Today we dive into **Servlets**, the foundation of Java Web D
 
 ## 📂 File Structure
 - `servlet_setup_guide.md`: **Installation Instructions** for Windows, Mac, and Linux.
+- `servlet_architecture.md`: **Deep Dive** into Architecture, Hierarchy, and Threading.
 - `servlet_intro.md`: Theory on Servlets and Architecture.
 - `servlet_lifecycle.md`: Explanation of the Life Cycle methods.
 - `request_handling.md`: Deep dive into handling HTTP requests.

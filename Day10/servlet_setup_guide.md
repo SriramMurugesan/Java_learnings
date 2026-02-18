@@ -6,6 +6,18 @@ To run Servlets, you need two main things:
 
 ---
 
+## ⚠️ CRITICAL: Tomcat Versions (Read This First)
+Before you start, check which Tomcat version you have. The code rules CHANGED between versions.
+
+| Tomcat Version | Servlet API | Java Package Import | Note |
+| :--- | :--- | :--- | :--- |
+| **Tomcat 9** | Servlet 4.0 | `import javax.servlet.*;` | **Recommended** for this course. |
+| **Tomcat 10+** | Servlet 5.0+ | `import jakarta.servlet.*;` | Requires changing `javax` to `jakarta` in all files. |
+
+> **We use `javax.servlet` (Tomcat 9 style) in our examples.**
+
+---
+
 ## 1. Install Java (JDK)
 Ensure you have **Java 8 or later** installed.
 
@@ -101,6 +113,38 @@ Since VS Code is just a text editor, it doesn't have built-in Tomcat integration
 2.  Create a Maven Project.
 3.  Add Tomcat server connector extension (e.g., "Community Server Connectors").
 4.  Right-click project -> "Run on Server".
+
+---
+
+## 4. Configuration: `web.xml` vs Annotations
+
+You asked about `web.xml`. In modern Servlets (Servlet 3.0+), **you do NOT need `web.xml`**. We use **Annotations** instead.
+
+### Method A: Annotations (Modern & Recommended)
+We use `@WebServlet("/url")` directly in the Java file. This is simpler and keeps configuration near the code.
+
+```java
+@WebServlet("/hello") // URL is now http://localhost:8080/myapp/hello
+public class HelloServlet extends HttpServlet { . . . }
+```
+
+### Method B: `web.xml` (Legacy / Old Style)
+In older versions (before 2010), you had to register every Servlet in `WEB-INF/web.xml`.
+**We rely on Method A**, but if you want to use Method B, you create `WEB-INF/web.xml`:
+
+```xml
+<web-app>
+    <servlet>
+        <servlet-name>MyHelloServlet</servlet-name>
+        <servlet-class>Day10.examples.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyHelloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+</web-app>
+```
+*Note: If you use `web.xml`, you don't need the `@WebServlet` annotation.*
 
 ---
 
